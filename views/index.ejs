@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" type="text/css" href="/styles/main.css">
+</head>
+<br>
+  <h1>QR Code Generator</h1>
+
+  <form action="/generate-qr" method="get">
+    <label for="url">Enter URL to Encode:</label>
+    <input type="text" id="url" name="url" placeholder="Input entire link, including https:///www..." required >
+    <button type="submit" id="btn">Generate QR Code</button>
+  </form>
+</br>
+
+  <div id="qr-code-container">
+    <% if (content) { %>
+      <img src="data:image/svg+xml;charset=UTF-8,<%= encodeURIComponent(content) %>" alt="QR Code" id="qr-code">
+    <% } %>
+
+
+  </div>
+</body>
+</html>
+
+
